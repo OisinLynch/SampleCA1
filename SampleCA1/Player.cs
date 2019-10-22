@@ -15,14 +15,21 @@ namespace SampleCA1
         //Short hand property for Player Name
         public string  PlayerName { get; set; }
 
-        //SHort hand property for Player Score
-        public int Score { get; set; }
+        //Short hand property for Player Score
+        public int Score { get; private set; }
 
         public Player(int playerId, string playerName, int score)
         {
             PlayerId = playerId;
             PlayerName = playerName;
             Score = score;
+        }
+
+        //Method to add score to player
+        public void IncreaseScore(int valueToAdd)
+        {
+            if (Score < 100)
+            Score += valueToAdd;
         }
     }
 }

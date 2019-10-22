@@ -16,6 +16,17 @@ namespace SampleCA1
             Player player4 = new Player(4, "Conor", 0);
             Player player5 = new Player(5, "Pauline", 0);
 
+            //Creating a list of player to hold all player objects
+            List<Player> allPLayers = new List<Player>();
+            allPLayers.Add(player1);
+            allPLayers.Add(player2);
+            allPLayers.Add(player3);
+            allPLayers.Add(player4);
+            allPLayers.Add(player5);
+
+            //Adding player scores using the Increase Score method
+            player1.IncreaseScore(1);
+            player2.IncreaseScore(10);
         }
     }
 }
