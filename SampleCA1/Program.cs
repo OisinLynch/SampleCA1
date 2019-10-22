@@ -27,6 +27,21 @@ namespace SampleCA1
             //Adding player scores using the Increase Score method
             player1.IncreaseScore(1);
             player2.IncreaseScore(10);
+
+            //Calling the display method
+            Display(allPLayers);
+        }
+
+        //Adding method to display player scores
+        private static void Display(List<Player> players)
+        {
+            Console.WriteLine("{0, -10}{1, -10}{2, -10}{3, -10}{4, -10}", "Player 1", "Player 2", "Player 3", "Player 4", "Player 5");
+
+            //Loop through all players in list and display scores for each player
+            foreach (Player player in players)
+            {
+                Console.Write("{0, -10}", player.Score);
+            }
         }
     }
 }
