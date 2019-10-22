@@ -25,11 +25,41 @@ namespace SampleCA1
             allPLayers.Add(player5);
 
             //Adding player scores using the Increase Score method
-            player1.IncreaseScore(1);
-            player2.IncreaseScore(10);
+            //player1.IncreaseScore(1);
+            //player2.IncreaseScore(10);
 
             //Calling the display method
             Display(allPLayers);
+            
+            //Calling the Get Scores method
+            GetScores(allPLayers);
+        }
+
+        private static void GetScores(List<Player> allPLayers)
+        {
+            //Loop to ask user to enter the number of the player they want to update the score of
+            Console.WriteLine("Please enter number of Player you wish to add score for: ");
+            string response = Console.ReadLine();
+            int playerNumber = int.Parse(response);
+
+            while (playerNumber != 0)
+            {
+                //Determine Player selected
+                Player selectedPlayer = allPLayers.ElementAt(playerNumber - 1);//using minus 1 as index starts at 0
+
+                //Increase score for that player
+                selectedPlayer.IncreaseScore(1);
+
+                //Displaye results
+                Display(allPLayers);
+
+                //Ask for another number or 0 to quit
+                Console.WriteLine("Please enter number of Player you wish to add score for: ");
+                response = Console.ReadLine();
+                playerNumber = int.Parse(response);
+
+
+            }//end of while loop
         }
 
         //Adding method to display player scores
@@ -42,6 +72,8 @@ namespace SampleCA1
             {
                 Console.Write("{0, -10}", player.Score);
             }
+
+            Console.WriteLine();//Add new line at end of scores
         }
     }
 }
